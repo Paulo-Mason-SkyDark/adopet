@@ -1,12 +1,11 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, theme as base } from "@chakra-ui/react";
 
-// 2. Extend the theme to include custom colors, fonts, etc
 const theme = extendTheme({
   colors: {
     brand: {
       primary: "#E5EDFD",
       primaryText: "#0D0E10",
-      secondaryText: "#C32E65",
+      secondary: "#C32E65",
       tertiaryText: "#0F364A",
       headerColorText: "#000000",
       primaryButton: "#F285AD",
@@ -15,6 +14,12 @@ const theme = extendTheme({
       background: "#18191A",
     },
   },
+
+  fonts: {
+    heading: `'Fredoka', 'Fredoka One', 'cursive', ${base.fonts?.heading}`,
+    body: `'Fredoka', 'Fredoka One', 'cursive', ${base.fonts?.body}`,
+  },
+
   textStyles: {
     h1: {
       fontSize: [`${42 / 16}rem`, `${21 / 16}`],
@@ -33,9 +38,10 @@ const theme = extendTheme({
   styles: {
     global: {
       "html, body": {
+        marginLeft: "5em",
+        marginRight: "5em",
         background: "#E5EDFD",
-        backgroundSize: "100%",
-        fontFamily: "Fredoka One', cursive, sans-serif",
+        fontFamily: `'Fredoka', 'Fredoka One', 'cursive'`,
       },
     },
   },
