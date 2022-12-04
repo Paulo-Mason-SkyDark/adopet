@@ -38,8 +38,6 @@ const theme = extendTheme({
   styles: {
     global: {
       "html, body": {
-        marginLeft: "5em",
-        marginRight: "5em",
         background: "#E5EDFD",
         fontFamily: `'Fredoka', 'Fredoka One', 'cursive'`,
       },

@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import { getFirestore } from "firebase/firestore/lite";
+import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfigs = {
   apiKey: process.env.NEXT_PUBLIC_APIKEY,
@@ -13,13 +15,8 @@ const firebaseConfigs = {
 };
 
 const app = initializeApp(firebaseConfigs);
+const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage(app);
 
-const te = async (db: any) => {
-  const doador = collection(db, "doador");
-  const cdoador = await getDocs(doador);
-  const ldoador = cdoador.docs.map((doc) => doc.data());
-  console.log("file: firebase.ts | line 25 | te | ldoador", ldoador);
-};
-
-export { db, te };
+export { auth, db, storage };
